@@ -1,0 +1,20 @@
+<!-- Clase para establecer el navbar -->
+<div class="top-bar">
+    <!-- Parte izquierda del menú -->
+    <div class="top-bar-left">
+        <!-- Establezco el tipo de menú dropdown -->
+        <ul class="dropdown menu" data-drop-down-menu>
+            <li class="menu-text">Empleados</li>
+            <li><a href="{% url 'persona_app:empleados_all' %}">Listar</a></li>
+            <li><a href="{% url 'departamento_app:departamento_list' %}">Departamentos</a></li>
+            <li><a href="/">Administrar</a></li>
+        </ul>
+    </div>
+    <div class="top-bar-right">
+        <!-- Agrupa con cierto tipo de letra contenido dentro de un UL -->
+        <ul class="menu">
+            <li><input type="search" placeholder="Buscar empleado..."></li>
+            <li><button type="button" class="button">Registrar nuevo</button></li>
+        </ul>
+    </div>
+</div>

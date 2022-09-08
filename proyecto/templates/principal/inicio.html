@@ -1,0 +1,62 @@
+<!-- Heredo la información del archivo base.html -->
+{% extends 'base.html' %}
+<!-- Cargo la información estática -->
+{% load static %}
+<!-- Establesco el título de la pestaña -->
+{% block title %}Inicio{% endblock title %}
+
+{% block body %}
+    {% include 'includes/header.html' %}
+
+    <!-- Inicio de la página de portada -->
+    <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+        <div class="orbit-wrapper">
+            <div class="orbit-controls">
+                <button class="orbit-previous"><span class="show-for-sr">Previous slide</span>&#9664;&#xFE0E;</button>
+                <button class="orbit-next"><span class="show-for-sr">Next slide</span>&#9654;&#xFE0E;</button>
+            </div>
+            <ul class="orbit-container">
+                <li class="is-active orbit-slide">
+                    <figure class="orbit-figure">
+                        <!-- Cargo la imagen -->
+                        <img src="{% static 'img/1.jpg' %}" alt="Oceano" class="orbit-img">
+                        <!-- Cargo el label -->
+                        <figcaption class="orbit-caption">Oceano</figcaption>
+                    </figure>
+                </li>
+                <li class="orbit-slide">
+                    <figure class="orbit-figure">
+                        <img src="{% static 'img/2.jpg' %}" alt="Diving" class="orbit-img">
+                        <figcaption class="orbit-caption">Oceano</figcaption>
+                    </figure>
+                </li>
+                <li class="orbit-slide">
+                    <figure class="orbit-figure">
+                        <img src="{% static 'img/3.jpg' %}" alt="Diving" class="orbit-img">
+                        <figcaption class="orbit-caption">Oceano</figcaption>
+                    </figure>
+                </li>
+                <li class="orbit-slide">
+                    <figure class="orbit-figure">
+                        <img src="{% static 'img/4.jpg' %}" alt="Playa" class="orbit-img">
+                        <figcaption class="orbit-caption">Playa</figcaption>
+                    </figure>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bloque de bienvenida -->
+    <div class="grid-x align-center">
+        <center>
+            <h1 class="cell large 8" style="font-size: 20px; text-align: center;">Bienvenido al sistema de registro de empleados</h1>
+            <div class="cell large 7">
+                <div class="callout primary">
+                    <h5>Registra y controla empleados</h5>
+                    <p>De manera eficaz y confiable, basándose en algoritmos nuevos y más eficientes</p>
+                    <a href="/" class="button">Ver empleados</a>
+                </div>
+            </div>
+        </center>
+    </div>
+{% endblock body %}

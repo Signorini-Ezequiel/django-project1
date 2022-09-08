@@ -1,0 +1,51 @@
+<!-- -------------------------------------------- -->
+<!-- Archivo maestro -->
+<!-- -------------------------------------------- -->
+
+<!-- Sentencia que levanta los valores de todas las variables estáticas -->
+{% load static %}
+
+<!-- Establece la versión de HTML5 -->
+<!DOCTYPE html>
+<!-- Defino una página HTML cuyo lenuaje está definido en español -->
+<html lang="es">
+<!-- Sección de encabezado de página -->
+
+<!-- Información para el navegador -->
+<head>
+    <!-- Meta: meta archivo -->
+    
+    <!-- Alfabéto que se va a usar (UTF-8: símbolos de habla latina) -->
+    <meta charset="UTF-8">
+    <!-- Define la compatibilidad entre el explorador ie (Internet Explorer) y edge -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Defino la responsibidad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Invoco al framework Zurb Foundation desde el archivo foundation.min.css -->
+    <link rel="stylesheet" href="{% static 'css/foundation.min.css' %}">
+    
+    <!-- Defino el título de la pestaña para el explorador -->
+    <!-- Bloque de título definido -->
+    <title>
+        {% block title %}
+        {% endblock title %}
+    </title>
+</head>
+
+<!-- Cuerpo de la página -->
+<body>
+    <!-- Bloque de contenido -->
+    {% block body %}
+    {% endblock body %}
+
+    <!-- Scrips propios de foundation -->
+    <script src="{% static 'js/vendor/jquery.js' %}"></script>
+    <script src="{% static 'js/vendor/what-input.js' %}"></script>
+    <script src="{% static 'js/vendor/foundation.min.js' %}"></script>
+
+    <!-- Script que ejecuta todas las rutinas Js sobre el documento (carga la información al navegador) -->
+    <script>
+        $(document).foundation();
+    </script>
+</body>
+</html>
